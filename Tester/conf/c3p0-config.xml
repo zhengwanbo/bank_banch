@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+    <named-config name="goldenDbConnection">
+        <property name="user">root</property>
+        <property name="password">db10$ZTE</property>
+        <property name="jdbcUrl">jdbc:mysql:loadbalance://10.47.157.124:3333/bank?rewriteBatchedStatements=true</property>
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        
+        <property name="initialPoolSize">50</property>
+        <property name="maxPoolSize">500</property>
+        <property name="minPoolSize">5</property>
+    </named-config>
+</c3p0-config>

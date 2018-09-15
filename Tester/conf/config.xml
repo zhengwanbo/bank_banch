@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <commonConfig>
+        <!-- 在初始化数据之前是否清理已有数据 -->
+        <cleanDataBeforeInit>true</cleanDataBeforeInit>
+    </commonConfig>   
+    
+    <!-- 初始化表数据的规则 -->
+    <tables>
+        <!-- 在表名为account的表中初始化十万条数据，每个account初始化一条数据 -->
+        <!-- repeatFrequency取值范围[1,10]-->
+        <!-- column为key的模式下不支持valueRange-->
+        <!-- length取值范围[10,20]-->
+         <!-- key="true" 表示是主键或者外键，目前系统只支持int型的主键外键-->
+        <table name="account" repeatFrequency="1" initCapacity="1000000" init="1">
+            <column name="accno" type="string"  preStr="62146800" length="16"/>
+            <column name="cuno" type="string"  preStr="999999" length="15"/>
+            <column name="currency" type="string"  preStr="CNY" length="3"/>
+            <column name="realtimeremain" type="int"  valueRange="10000" />
+        </table>
+        <table name="customer" repeatFrequency="1" initCapacity="1000000" init="0">
+            <column name="cuno" type="string"  preStr="999999" length="15"/>
+            <column name="cuname" type="string"  preStr="cuname" length="20"/>
+            <column name="paptype" type="string"  preStr="SF" length="2"/>
+            <column name="papno" type="string"  preStr="32062119" length="18"/>
+            <column name="phoneno" type="string"  preStr="1595" length="11"/>
+        </table>    
+        
+        <!-- 
+         <table name="demo" repeatFrequency="1" initCapacity="23">
+            <column name="account" type="int" startVaule="1" key="true"/>
+            <column name="name" type="string"  preStr="name" length="20"/>
+            <column name="telephone" type="string"  preStr="1595678" length="11"/>
+            <column name="sex" type="int" valueRange="0|1"/>
+        </table>
+        
+         -->    
+    </tables>
+    
+</root>
+
