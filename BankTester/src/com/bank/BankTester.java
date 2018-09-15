@@ -21,7 +21,7 @@ import com.bank.service.InitDataService;
 import com.bank.service.MyService;
 import com.bank.util.DBUtils;
 
-public class Tester {
+public class BankTester {
 
     static {
         Connection conn = DBUtils.getConn();
@@ -581,7 +581,7 @@ public class Tester {
 
     private static List<String> loadParamter(){
         List<String> paramList = new ArrayList<String>();
-        File paramFile = new File(Tester.class.getClassLoader()
+        File paramFile = new File(BankTester.class.getClassLoader()
                         .getResource("").getPath()+"param.txt");
         if (!paramFile.exists()) {
             throw new RuntimeException("Param file 'param.txt' does not exist.");
